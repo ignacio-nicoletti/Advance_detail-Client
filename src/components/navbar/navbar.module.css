@@ -1,0 +1,17 @@
+.navbar{
+background-color:#f1d518;
+width: 100%;
+position: fixed;
+z-index: 1;
+font-family: Contrail One;
+}
+
+.link{
+text-decoration: none;
+color: #000000;
+padding: 10px;
+}
+
+.link:hover{
+    color:white
+}
