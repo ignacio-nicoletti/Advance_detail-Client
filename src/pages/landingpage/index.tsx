@@ -2,7 +2,7 @@ import { Navbar } from "@/components/navbar/navbar";
 import style from "./landingPage.module.css";
 
 import pincelVolante from "../../assets/pincelVolante.png";
-import tapizado from "../../assets/limpiezaTapizado.png";
+import tapizado from "../../assets/trabajos/limpiezaTapizado.png";
 import pulidora2 from "../../assets/pulidora2.jpeg";
 
 import ceramico from "../../assets/landing/ceramico2.jpg";
@@ -14,13 +14,12 @@ import { CardMember } from "@/components/CardMember/cardMember";
 import { Footer } from "@/components/Footer/footer";
 import "./landingPage.module.css";
 import Link from "next/link";
+
+
+
 export default function LandingPage() {
   return (
     <div className={style.landing}>
-      <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
-      </style>
       <Navbar />
       <h1>
         ¡¡TU VEHICULO <br /> DEJALO COMO NUEVO!!

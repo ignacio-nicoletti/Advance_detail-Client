@@ -5,15 +5,20 @@ import style from "./trabajos.module.css";
 import interior from "../../assets/trabajos/limpiezaTapizado.png";
 import ceramico from "../../assets/trabajos/ceramico.jpg";
 import acrilico from "../../assets/trabajos/acrilico2.jpg";
+import { Carousel } from "@/components/carousel/Carousel";
+// import Carousel from "../../components/carousel/carousel";
 
 export default function trabajos() {
+
+  const images:any = [
+    ceramico,
+    acrilico,
+   
+  ];
+
+
   return (
     <div className={style.contain}>
-      {/* <style>
-        @import
-        url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');
-      </style> */}
-
       <Navbar />
       <div className={style.tratamientos}>
         <h2>Tramientos</h2>
@@ -25,14 +30,12 @@ export default function trabajos() {
             embarcaciones, aviones, etc. Posee una mayor dureza y durabilidad
             que el tratamineto acrilico.
           </p>
-          <Image
-            src={ceramico}
-            alt="Logo advance_detailer"
-            width={150}
-            height={150}
-            style={{ borderRadius: "10px" }}
-          />
+
+          <div>
+            <Carousel images={images}/>
+            </div>
         </div>
+
         <h3>Acrilicos </h3>
         <div className={style.serviceBox}>
           <p>
@@ -44,50 +47,40 @@ export default function trabajos() {
             rayos UV y la contaminación, y mayor profundidad en el color y
             brillo de la pintura.
           </p>
-          <Image
-            src={acrilico}
-            alt="Logo advance_detailer"
-            width={150}
-            height={150}
-            style={{ borderRadius: "10px" }}
-          />
+          <Carousel images={images}/>
         </div>
         <h3>Integral </h3>
         <div className={style.serviceBox}>
-          {/* <Image
-            src={""}
-            alt="Logo advance_detailer"
-            width={150}
-            height={150}
-            style={{ borderRadius: "10px" }}
-          /> */}
           <p>
             Es un tratamiento avanzado destinado a la protección y abrillantado
             de todo tipo de superficies de vehículos como coches, motos,
             embarcaciones, aviones, etc.
           </p>
+          <Carousel images={images}/>
         </div>
+        <h3>Pasos a seguir</h3>
         <div className={style.pasos}>
-          <h3>Pasos a seguir</h3>
-          <div className={style.boxPasos} >
+          <div className={style.boxPasos}>
             <p>Lavado completo y limpieza profunda</p>
           </div>
-          <div>
+          <div className={style.boxPasos}>
             <p>Descontaminado de Carrocería (Claybar)</p>
           </div>
-          <div>
+          <div className={style.boxPasos}>
             <p>Pulido y corrección de barniz o laca + Abrillantado</p>
           </div>
-          <div>
+          <div className={style.boxPasos}>
             <p>Hidratación de plásticos exteriores</p>
           </div>
-          <div>
+          <div className={style.boxPasos}>
             <p>Detallado de insignias</p>
           </div>
-          <div>
+          <div className={style.boxPasos}>
             <p>Sellado y limpieza de cristales</p>
           </div>
-          <div><p>Sellado y Abrillantado de plásticos interiores y exteriores</p></div>
+          <div className={style.boxPasos}>
+            <p>Sellado y Abrillantado de plásticos interiores y exteriores</p>
+          </div>
         </div>
       </div>
       <div className={style.lav}>
