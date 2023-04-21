@@ -84,8 +84,8 @@ export default function LandingPage() {
         <h2 id="about">¿Quienes somos?</h2>
         <div className={style.box1}>
           <p>
-            "Nuestro equipo" está compuesto por especialistas en diferentes
-            áreas del "detailing automotor", como lavado y encerado, limpieza de
+            Nuestro equipo está compuesto por especialistas en diferentes
+            áreas del detailing automotor, como lavado y encerado, limpieza de
             interiores, pulido y abrillantado de carrocería, tapicería, entre
             otros, contando con las últimas técnicas y tendencias del mercado
             asegurando éxito general del proceso al detalle.

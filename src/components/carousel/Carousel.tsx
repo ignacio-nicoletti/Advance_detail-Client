@@ -63,7 +63,7 @@ export const Carousel: FC<CarouselProps> = ({
         <div className={clase}>
           {state === true
             ? imagesGallery.map((e) => (
-                <div className={style.photo}>
+                <div className={style.photo} key={e}>
                   <Image
                     src={e}
                     alt="carousel current slide"
