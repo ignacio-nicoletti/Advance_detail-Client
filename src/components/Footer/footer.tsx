@@ -4,6 +4,8 @@ import instagramIcon from "../../assets/instagram.png";
 import whatsapp from "../../assets/whatsapp.png";
 import Image from "next/image";
 import gyeon from "../../assets/Footer/gyeon.png";
+import glanzen from "../../assets/Footer/glanzen.png";
+import advance from "../../assets/Footer/advanceLogo.png"
 
 export const Footer: FC = () => {
   return (
@@ -15,113 +17,126 @@ export const Footer: FC = () => {
               <Image
                 src={gyeon}
                 alt="Logo advance_detailer"
-                width={150}
-                height={150}
+                width={50}
+                height={50}
                 style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={glanzen}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={advance}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={gyeon}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={glanzen}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={advance}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={gyeon}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={glanzen}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={advance}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={gyeon}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={glanzen}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={advance}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={gyeon}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
             <div className={style.slide}>
-              <img
-                src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png"
-                height="100"
-                width="250"
-                alt=""
+            <Image
+                src={glanzen}
+                alt="Logo advance_detailer"
+                width={50}
+                height={50}
+                style={{ borderRadius: "10px" }}
               />
             </div>
           </div>
@@ -134,7 +149,7 @@ export const Footer: FC = () => {
             La plata, Buenos Aires
           </p>
         </div>
-        <span className={style.copyrigth}>©Advance_detailer</span>
+        <span className={style.copyrigth}>© Advance_detailer</span>
         <div className={style.socialMedia}>
           <a
             href="https://www.instagram.com/advance_detailer/"

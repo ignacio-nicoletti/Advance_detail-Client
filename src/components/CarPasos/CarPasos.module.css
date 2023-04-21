@@ -1,0 +1,19 @@
+.pasos {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 1rem;
+}
+.card {
+  background-color: rgb(60, 60, 60);
+  background: linear-gradient(to top, #f1d518 -50%, rgba(255, 255, 255, 0) 60%);
+
+  padding: 2%;
+  border: solid black 3px;
+  border-radius: 5px;
+}
+.card h6 {
+  color: #f1d518;
+}
+
+/* #f1d518 */

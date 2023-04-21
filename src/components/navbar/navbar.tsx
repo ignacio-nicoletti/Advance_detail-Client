@@ -50,7 +50,7 @@ export const Navbar: FC = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className={style.link} href="#about">
+              <Link className={style.link} href="/landingpage#about">
                 Sobre nosotros
               </Link>
             </li>
