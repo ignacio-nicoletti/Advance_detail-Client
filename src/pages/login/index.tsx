@@ -25,7 +25,9 @@ export default function Login() {
     e.preventDefault();
     login === true
       ? dispatch(postlogin(values))
-      : dispatch(postRegister(values));
+      : login === false
+      ? dispatch(postRegister(values))
+      : "";
   };
 
   if (status === 200) {

@@ -28,16 +28,14 @@ export const postRegister=(values:any)=>async(dispatch:AppDispatch)=>{
   }
 }
 
+export const getProduct=(token:any)=>async(dispatch:AppDispatch)=>{
 
-export const getProduct = (token: string | null) => {
-  console.log(token);
+  try {
+    const resp = await axios.get("http://localhost:3000/product", { headers: { "user-token": token },});
+  
+    dispatch(SetProduct({ products: resp.data.products }))
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-  return async (dispatch: AppDispatch, getState: any) => {
-    // dispatch()
-    const resp = await axios.get("http://localhost:3000/product", {
-      headers: { "user-token": token },
-    });
-
-    dispatch(SetProduct({ products: resp.data.products }));
-  };
-};
