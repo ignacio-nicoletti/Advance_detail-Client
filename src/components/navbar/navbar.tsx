@@ -10,7 +10,7 @@ export const Navbar: FC = () => {
   return (
     <>
    
-      {route === "/landingpage" ? (
+      {route === "/landingpage" || "/login" ? (
         <div className={style.navbar}>
           <ul className="nav justify-content-end">
             <li className="nav-item">
@@ -24,7 +24,7 @@ export const Navbar: FC = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className={style.link} href="#about">
+              <Link className={style.link} href="/landingpage#about">
                 Sobre nosotros
               </Link>
             </li>
@@ -36,7 +36,7 @@ export const Navbar: FC = () => {
           </ul>
         </div>
       ) : (
-        route === "/trabajos" ? (
+        route === "/home" ? (
           <div className={style.navbar}>
           <ul className="nav justify-content-end">
             <li className="nav-item">
