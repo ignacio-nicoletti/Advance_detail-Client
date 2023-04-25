@@ -1,18 +1,21 @@
 import { Footer } from "@/components/Footer/footer";
 import { Navbar } from "@/components/navbar/navbar";
-import { postlogin } from "@/redux/api";
+import { postlogin, postRegister } from "@/redux/api";
+import { AppDispatch, RootState } from "@/redux/store/store";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import style from "./login.module.css";
 
+import Router from "next/router";
+
 export default function Login() {
-  const [login, setLogin] = useState(true);
+  const dispatch = useDispatch<AppDispatch>();
+  const [login, setLogin] = useState(true); //alterna login y register
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { status } = useSelector((state: RootState) => state.Auth);
 
-  
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-
-let values={email,password}
+  let values = { email, password };
 
   const handlerActive = () => {
     setLogin(!login);
@@ -20,11 +23,14 @@ let values={email,password}
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
-    postlogin(values)
-   
-    
-    // console.log(`password: ${password}\nEmail: ${email}`);
+    login === true
+      ? dispatch(postlogin(values))
+      : dispatch(postRegister(values));
   };
+
+  if (status === 200) {
+    Router.push("/");
+  } //si se logueo ingresa
 
   return (
     <div className={style.login}>
@@ -44,21 +50,27 @@ let values={email,password}
 
           <span>Registrarse</span>
 
-          <div>
+          {/* <div>
             <input type="checkbox" id="toggle" />
             <label htmlFor="toggle"></label>
-          </div>
+          </div> */}
         </div>
 
         {login === true ? (
           <div className={style.containFront}>
             <p>Ingresar</p>
             <form onSubmit={handleSubmit}>
-              <input id='email' type="email" placeholder="Ingresa tu email" 
-              onChange={(e) => setEmail(e.target.value)}
+              <input
+                id="email"
+                type="email"
+                placeholder="Ingresa tu email"
+                onChange={(e) => setEmail(e.target.value)}
               />
-              <input id='password' type="password" placeholder="Ingresa tu contraseña" 
-              onChange={(e) => setPassword(e.target.value)}
+              <input
+                id="password"
+                type="password"
+                placeholder="Ingresa tu contraseña"
+                onChange={(e) => setPassword(e.target.value)}
               />
               <button type="submit">Entrar</button>
             </form>
@@ -66,10 +78,20 @@ let values={email,password}
         ) : (
           <div className={style.containBack}>
             <p>Registrarse</p>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="email"
+                placeholder="Ingresa tu email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Ingresa tu contraseña"
+                onChange={(e) => setPassword(e.target.value)}
+              />
 
-            <input type="email" placeholder="Ingresa tu email" />
-            <input type="password" placeholder="Ingresa tu contraseña" />
-            <button type="submit">Registrarse</button>
+              <button type="submit">Registrarse</button>
+            </form>
           </div>
         )}
       </div>

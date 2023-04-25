@@ -2,12 +2,14 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 export interface CounterState {
-    auth: string
+    auth: string,
+    status:Number
 }
 
 
 const initialState: CounterState = {
     auth: "",
+    status:0
 }
 
 
@@ -15,8 +17,9 @@ export const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        SetAuth: (state, action) => {
+        SetAuth: (state, action) => {            
             state.auth = action.payload
+            state.status=action.payload.status
         },
     },
 
