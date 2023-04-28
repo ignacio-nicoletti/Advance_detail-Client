@@ -2,11 +2,11 @@ import { FC, useState } from "react";
 import style from "./cardProduct.module.css";
 import Image from "next/image";
 import prueba from "../../assets/home/fondo2.jpeg";
-
+import { Counter } from "../Counter/counter";
 
 interface Product {
   title: String;
-  amount: Number;
+  amount: String;
   brand: String;
   description: String;
   material: String;
@@ -21,6 +21,7 @@ export const CardProduct: FC<Product> = ({
   description,
   material,
   price,
+  dimensions,
 }: Product) => {
   const [front, setFront] = useState(true);
 
@@ -30,35 +31,51 @@ export const CardProduct: FC<Product> = ({
 
   return (
     <>
-      {front === true ? (
-        <div className={style.card_container} onClick={handlerClick}>
-          <div className={style.card}>
-            <div className={style.front}>
+      <div className={style.card_container}>
+        {front === true ? (
+          <div className={style.front}>
             <Image
-                src={prueba}
-                alt="photo product"
-                width={177}
-                height={140}
-                style={{ }}
-                />
-                <h4>{title}</h4>
-                
-                <p><i>Marca: </i> {brand || "-"}</p>
-                <p>${price}</p>
+              src={prueba}
+              alt="photo product"
+              width={177}
+              height={140}
+              style={{}}
+            />
+            <div className={style.description}>
+              <h5 className={style.title}>{title}</h5>
+
+              <p>
+                <b>Marca: </b> {brand || "-"}
+              </p>
+              <p>Stock:{amount}</p>
+              <p>${price}</p>
             </div>
+
+            <button className={style.masInfo} onClick={handlerClick}>
+              ver mas
+            </button>
+            <Counter />
           </div>
-        </div>
-      ) : front === false ? (
-        <div className={style.card_container} onClick={handlerClick}>
-          <div className={style.card}>
-            <div className={style.back}>
-            <p className={style.description}>{description}</p>
+        ) : front === false ? (
+          <div className={style.back}>
+            <Image src={prueba} alt="photo product" width={177} height={140} />
+            <div className={style.description}>
+              <p>{description}</p>
+              <p>Medidas: {dimensions || "-"}</p>
+              <p>Material: {material}</p>
+              <p>Stock:{amount}</p>
             </div>
+
+            <button className={style.masInfo} onClick={handlerClick}>
+              ver Menos
+            </button>
+
+            <Counter />
           </div>
-        </div>
-      ) : (
-        ""
-      )}
+        ) : (
+          ""
+        )}
+      </div>
     </>
   );
 };

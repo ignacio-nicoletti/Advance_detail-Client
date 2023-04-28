@@ -1,34 +1,38 @@
-.contain{
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .counter {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .count {
-    font-size: 1rem;
-    /* margin-bottom: 1rem; */
-  }
-  
-  .button {
-    padding: 1rem;
-    /* margin: 0.5rem; */
-    border: none;
-    border-radius: 50%;
-    /* background-color: #007bff; */
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0069d9;
-  }
-  
-  .sum{
+.contain {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;;
+}
 
-    border-radius: 5px;
-  }
+.counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.count {
+  font-size: 1rem;
+  
+}
+
+.button {
+  padding: 1rem;
+  border: none;
+  border-radius: 50%;
+  color: black;
+  cursor: pointer;
+  margin: 5%;
+  background-color: white;
+}
+
+.button:hover {
+  background-color: #000000;
+  color: white;
+}
+
+.sum {
+  width: 100%;
+  border: solid black 3px;
+  border-radius: 3px;
+}
