@@ -6,12 +6,13 @@ import { Counter } from "../Counter/counter";
 
 interface Product {
   title: String;
-  amount: String;
+  amount: any;
   brand: String;
   description: String;
   material: String;
   price: String;
   dimensions: String;
+  id: String;
 }
 
 export const CardProduct: FC<Product> = ({
@@ -22,6 +23,7 @@ export const CardProduct: FC<Product> = ({
   material,
   price,
   dimensions,
+  id,
 }: Product) => {
   const [front, setFront] = useState(true);
 
@@ -54,7 +56,7 @@ export const CardProduct: FC<Product> = ({
             <button className={style.masInfo} onClick={handlerClick}>
               ver mas
             </button>
-            <Counter />
+            <Counter id={id} amount={amount} />
           </div>
         ) : front === false ? (
           <div className={style.back}>
@@ -70,7 +72,9 @@ export const CardProduct: FC<Product> = ({
               ver Menos
             </button>
 
-            <Counter />
+            <Counter 
+            id={id}
+            amount={amount}/>
           </div>
         ) : (
           ""

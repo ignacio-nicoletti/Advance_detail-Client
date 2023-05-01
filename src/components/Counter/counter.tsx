@@ -1,8 +1,23 @@
+import { ProductStore } from "@/redux/controllers/products";
+import { AppDispatch } from "@/redux/store/store";
 import React, { FC, useState } from "react";
+import { useDispatch } from "react-redux";
 import styles from "./counter.module.css";
 
-export const Counter: FC = () => {
+interface counter {
+  id: String;
+  amount: Number;
+}
+
+export const Counter: FC<counter> = ({ id, amount }: counter) => {
   const [count, setCount] = useState(0);
+  console.log(amount);
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  const handlerStore = () => {
+    dispatch(ProductStore(id, count));
+  };
 
   const increment = () => {
     setCount(count + 1);
@@ -12,8 +27,10 @@ export const Counter: FC = () => {
     setCount(count - 1);
   };
 
-  let active = false;
-  count === 0 ? (active = true) : "";
+  let activeDec = false;
+  let activeInc = false;
+  count == 0 ? (activeDec = true) : "";
+  count == amount ? (activeInc = true) : "";
 
   return (
     <>
@@ -22,16 +39,22 @@ export const Counter: FC = () => {
           <button
             className={styles.button}
             onClick={decrement}
-            disabled={active}
+            disabled={activeDec}
           >
             -
           </button>
           <h5 className={styles.count}>{count}</h5>
-          <button className={styles.button} onClick={increment}>
+          <button
+            className={styles.button}
+            onClick={increment}
+            disabled={activeInc}
+          >
             +
           </button>
         </div>
-        <button className={styles.sum}>Agregar al carrito</button>
+        <button className={styles.sum} onClick={handlerStore}>
+          Agregar al carrito
+        </button>
       </div>
     </>
   );

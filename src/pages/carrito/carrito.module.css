@@ -1,9 +1,60 @@
-.contain{
-width: 100%;
-height: 100vh;
-margin: 0;
-padding: 0;
-background-image: url("../../assets/fonodo3.jpg");
-background-repeat: no-repeat;
-background-size: cover;
+.contain {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("../../assets/fonodo3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.CardContain {
+    padding-top: 10%;
+    
+}
+
+.card {
+    margin-inline: 20%;
+    margin-bottom: 2%;
+    color: white;
+    display: flex;
+    border: solid black 3px;
+}
+.info {
+    width: 70%;
+}
+.infoPrice {
+    display: flex;
+    width: 30%;
+    text-align: center;
+}
+
+.cant {
+    width: 70%;
+    border: solid black 3px;
+    border-top: none;
+    border-bottom: none;
+}
+
+.price {
+    width: 30%;
+}
+
+.total {
+    display: flex;
+    border: solid black 3px;
+    margin-inline: 20%;
+    color: white;
+}
+
+.vacio {
+    border: solid black 3px;
+    width: 70.5%;
+    border-top: none;
+    border-bottom: none;
+}
+.priceT {
+    text-decoration: underline;
+    text-align: center;
+    padding-left: 10%;
 }

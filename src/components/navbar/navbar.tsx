@@ -12,9 +12,13 @@ export const Navbar: FC = () => {
 
   const { auth } = useSelector((state: RootState) => state.Auth);
 
-  if (auth === "" && typeof window !== "undefined" && route === "/") {
-    Router.push("/login");
-  }
+// while(auth === "" && typeof window !== "undefined" && route === "/"){
+//   Router.push("/login");
+// }
+
+  // if (auth === "" && typeof window !== "undefined" && route === "/") {
+  //   Router.push("/login");
+  // }
 
   const [desp, setDesp] = useState(false);
   const handlerActive = () => {

@@ -1,12 +1,12 @@
 import { Footer } from "@/components/Footer/footer";
 import { Navbar } from "@/components/navbar/navbar";
-import { postlogin, postRegister } from "@/redux/api";
 import { AppDispatch, RootState } from "@/redux/store/store";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./login.module.css";
 
 import Router from "next/router";
+import { postlogin, postRegister } from "@/redux/controllers/Auth";
 
 export default function Login() {
   const dispatch = useDispatch<AppDispatch>();
