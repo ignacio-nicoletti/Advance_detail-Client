@@ -34,7 +34,7 @@ const handlerSesion=()=>{
 
   return (
     <>
-      {route == "/" && auth !== "" ? (
+      {route == "/" || "/carrito" && auth !== "" ? (
         <div className={style.navbar}>
           <ul className="nav justify-content-end">
             <li className="nav-item">
@@ -50,6 +50,11 @@ const handlerSesion=()=>{
             <li className="nav-item">
               <Link className={style.link} href="/landingpage#about">
                 Sobre nosotros
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className={style.link} href="/">
+                Tienda
               </Link>
             </li>
             <li className="nav-item">
