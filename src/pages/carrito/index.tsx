@@ -1,78 +1,73 @@
 import { Footer } from "@/components/Footer/footer";
 import { Navbar } from "@/components/navbar/navbar";
 import { RootState } from "@/redux/store/store";
+import { Product } from "@/types";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 import style from "./carrito.module.css";
 
+interface ProductStoreProps {
+  id: string;
+  count: number;
+  price: number;
+}
+
 export default function Carrito() {
   // RENDER INFO
-  let productsStore = useSelector(
+  let productsStore: ProductStoreProps[] = useSelector(
     (state: RootState) => state.product.productsStore
   ); //product in store
-  let allProducts = useSelector((state: RootState) => state.product.products); //all products
 
-  let StoreProduct = []; //products filter for mapping
+  let allProducts: Product[] = useSelector(
+    (state: RootState) => state.product.products
+  ); //all products
 
-  for (let i = 0; i < productsStore.length; i++) {
-    for (let j = 0; j < allProducts.length; j++) {
-      if (productsStore[i].id === allProducts[j]._id) {
-        StoreProduct.push({
-          count: productsStore[i].count,
-          product: allProducts[j],
-        });//push {count:count, {...}}
-      }
-    }
-  }
+  const StoreProduct: Product[] = allProducts.filter((product) => {
+    const idsArray = productsStore.map(({ id }) => id);
+    const productFound = productsStore.filter(({ id }) => id === product._id);
+
+    return productsStore.map(({ id }) => id).includes(product._id);
+  });
+
   // RENDER INFO
 
-  let total:any = [];
-  let suma=0;
+  let price = productsStore.map(({ price, count }) => price * count);
+  let total = 0;
+  for (let i = 0; i < price.length; i++) {
+    total = total + price[i];
+  }
+
   
-for (let i = 1; i < total.length; i++) {
- 
-
-}
-console.log(suma);
-
-
-
 
   return (
     <div className={style.contain}>
       <Navbar />
       <div className={style.CardContain}>
-        {StoreProduct.map((e: any) => (
+        {StoreProduct.map((product) => (
           <div className={style.card}>
             <div className={style.info}>
-              <p>{e.product.name}</p>
-              <p>{e.product.description}</p>
-              <p>Marca: {e.product.brand}</p>
-              <p>Material: {e.product.material}</p>
+              <p>{product.name}</p>
+              <p>{product.description}</p>
+              <p>Marca: {product.brand}</p>
+              <p>Material: {product.material}</p>
             </div>
             <div className={style.infoPrice}>
               <div className={style.cant}>
                 <p>Unidades</p>
-                <p>{e.count}</p>
+                {/* <p>{count}</p> */}
               </div>
               <div className={style.price}>
-                <p>{e.product.price}$</p>
+                <p>{product.price}$</p>
               </div>
-            
             </div>
-            {total.push(e.count*e.product.price)}
           </div>
         ))}
         <div className={style.total}>
-          <div className={style.vacio}></div>
+          <div className={style.vacio}>{}</div>
           <div className={style.priceT}>
-            <p>Precio</p>
-            {
-
-
-
-
-            }
+            <p>Total</p>
+            <p>{total}</p>
           </div>
         </div>
       </div>

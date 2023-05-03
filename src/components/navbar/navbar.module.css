@@ -4,12 +4,14 @@ width: 100%;
 position: fixed;
 z-index: 1;
 font-family: Contrail One;
+display: flex;
+justify-content: end;
 }
 
 .link{
 text-decoration: none;
 color: #000000;
-padding: 10px;
+padding-inline: 10px;
 }
 
 .link:hover{
@@ -22,4 +24,7 @@ background-color: #c99400;
 padding: 1%;
 right: 0.5%;
 
+}
+.icon{
+    padding-right: 10%;
 }

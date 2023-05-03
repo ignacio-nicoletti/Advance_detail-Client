@@ -5,18 +5,19 @@ import { useDispatch } from "react-redux";
 import styles from "./counter.module.css";
 
 interface counter {
-  id: String;
-  amount: Number;
+  id: string;
+  amount: number;
+  price:number;
 }
 
-export const Counter: FC<counter> = ({ id, amount }: counter) => {
+export const Counter: FC<counter> = ({ id, amount,price }: counter) => {
   const [count, setCount] = useState(0);
-  console.log(amount);
+ 
 
   const dispatch = useDispatch<AppDispatch>();
 
   const handlerStore = () => {
-    dispatch(ProductStore(id, count));
+    dispatch(ProductStore(id, count,price));
   };
 
   const increment = () => {

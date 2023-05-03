@@ -4,61 +4,58 @@ import style from "./navbar.module.css";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store/store";
-import Router from "next/router";
+import { clearSession } from "@/redux/controllers/Auth";
 
 export const Navbar: FC = () => {
   const router = useRouter();
-  const route = router.route;
+  const route =router.route
 
-  const { auth } = useSelector((state: RootState) => state.Auth);
-
-// while(auth === "" && typeof window !== "undefined" && route === "/"){
-//   Router.push("/login");
-// }
-
-  // if (auth === "" && typeof window !== "undefined" && route === "/") {
-  //   Router.push("/login");
-  // }
+  const auth = useSelector((state: RootState) => state.Auth);
 
   const [desp, setDesp] = useState(false);
   const handlerActive = () => {
     setDesp(!desp);
+  }; //despliegue de opciones
+
+  const handlerSesion = () => {
+    if (typeof window !== "undefined") {
+      localStorage.clear();
+      clearSession();
+    }
+    router.push("/landingpage");
+    setTimeout(() => router.reload(), 1000);
   };
 
-
-const handlerSesion=()=>{
-  if(typeof window !== "undefined"){
-    localStorage.clear()
+  let OptionsNav;
+  if (auth.autorized === true) {
+    OptionsNav = [
+      { option: "Inicio", path: "/landingpage" },
+      { option: "Trabajos", path: "/trabajos" },
+      { option: "Sobre Nosotros", path: "/landingpage#about" },
+      { option: "Tienda", path: "/" },
+    ];
+  } else {
+    OptionsNav = [
+      { option: "Inicio", path: "/landingpage" },
+      { option: "Trabajos", path: "/trabajos" },
+      { option: "Sobre Nosotros", path: "/landingpage#about" },
+    ];
   }
-}
 
   return (
     <>
-      {route == "/" || "/carrito" && auth !== "" ? (
-        <div className={style.navbar}>
-          <ul className="nav justify-content-end">
+      <div className={style.navbar}>
+        <ul className="nav justify-content-end">
+          {OptionsNav.map((e: any) => (
             <li className="nav-item">
-              <Link className={style.link} href="/landingpage">
-                inicio
+              <Link className={style.link} href={e.path}>
+                {e.option}
               </Link>
             </li>
+          ))}
+          {auth.autorized === true ? (
             <li className="nav-item">
-              <Link className={style.link} href="/trabajos">
-                Trabajos
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className={style.link} href="/landingpage#about">
-                Sobre nosotros
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className={style.link} href="/">
-                Tienda
-              </Link>
-            </li>
-            <li className="nav-item">
-              <div className={style.link}>
+              <Link className={style.link} href="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="25"
@@ -66,6 +63,7 @@ const handlerSesion=()=>{
                   fill="currentColor"
                   viewBox="0 0 16 16"
                   onClick={handlerActive}
+                  style={{ marginRight: 20 }}
                 >
                   <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                   <path
@@ -73,61 +71,44 @@ const handlerSesion=()=>{
                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
                   />
                 </svg>
-              </div>
-              {desp === true ? (
-                <div className={style.active}>
-                  <ul>
-                    <li>
-                      <Link href="" className={style.link}>
-                        Perfil
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/carrito" className={style.link}>
-                        Carrito
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/landingpage" className={style.link} onClick={handlerSesion}>
-                        Cerrar sesion
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              ) : (
-                ""
-              )}
-            </li>
-          </ul>
-        </div>
-      ) : route === "/landingpage" || "/login" || "/carrito"? (
-        <div className={style.navbar}>
-          <ul className="nav justify-content-end">
-            <li className="nav-item">
-              <Link className={style.link} href="/landingpage">
-                Inicio
+                {desp === true ? (
+                  <div className={style.active}>
+                    <ul>
+                      <li>
+                        <Link href="/perfil" className={style.link}>
+                          Perfil
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/carrito" className={style.link}>
+                          Carrito
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/landingpage"
+                          className={style.link}
+                          onClick={handlerSesion}
+                        >
+                          Cerrar sesion
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                ) : (
+                  ""
+                )}
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className={style.link} href="/trabajos">
-                Trabajos
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className={style.link} href="/landingpage#about">
-                Sobre nosotros
-              </Link>
-            </li>
+          ) : (
             <li className="nav-item">
               <Link className={style.link} href="/login">
                 Ingresar
               </Link>
             </li>
-          </ul>
-        </div>
-      ) : (
-        ""
-      )}
+          )}
+        </ul>
+      </div>
     </>
   );
 };

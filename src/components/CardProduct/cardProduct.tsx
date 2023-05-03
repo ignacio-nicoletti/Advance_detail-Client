@@ -5,14 +5,14 @@ import prueba from "../../assets/home/fondo2.jpeg";
 import { Counter } from "../Counter/counter";
 
 interface Product {
-  title: String;
+  title: string;
   amount: any;
-  brand: String;
-  description: String;
-  material: String;
-  price: String;
-  dimensions: String;
-  id: String;
+  brand: string;
+  description: string;
+  material: string;
+  price: number;
+  dimensions: string;
+  id: string;
 }
 
 export const CardProduct: FC<Product> = ({
@@ -56,7 +56,7 @@ export const CardProduct: FC<Product> = ({
             <button className={style.masInfo} onClick={handlerClick}>
               ver mas
             </button>
-            <Counter id={id} amount={amount} />
+            <Counter id={id} amount={amount} price={price}/>
           </div>
         ) : front === false ? (
           <div className={style.back}>
@@ -74,7 +74,8 @@ export const CardProduct: FC<Product> = ({
 
             <Counter 
             id={id}
-            amount={amount}/>
+            amount={amount}
+            price={price}/>
           </div>
         ) : (
           ""
