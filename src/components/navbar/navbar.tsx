@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store/store";
 import { clearSession } from "@/redux/controllers/Auth";
+import {deleteCookie } from "cookies-next";
+
+
 
 export const Navbar: FC = () => {
   const router = useRouter();
@@ -19,8 +22,9 @@ export const Navbar: FC = () => {
 
   const handlerSesion = () => {
     if (typeof window !== "undefined") {
-      localStorage.clear();
       clearSession();
+      localStorage.clear(); //limpio storage
+      deleteCookie("cookieToken");//limpio cookie
     }
     router.push("/landingpage");
     setTimeout(() => router.reload(), 1000);
