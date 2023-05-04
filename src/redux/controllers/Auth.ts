@@ -14,8 +14,7 @@ export const postlogin = (values: any) => async (dispatch: AppDispatch) => {
     dispatch(
       SetAuth({ auth: resp.data, status: resp.status, autorized: true })
     );
-dispatch(SetProfile({profile:resp.data.user}))
-
+    dispatch(SetProfile({ profile: resp.data.user }));
   } catch (err) {
     console.log(err);
   }
