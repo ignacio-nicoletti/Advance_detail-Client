@@ -1,11 +1,18 @@
+import { ProfileProps } from "@/types";
 import { createSlice } from "@reduxjs/toolkit";
 
-export interface Profile {
-profile:{}
-}
+// export interface Profile {
+// profile:ProfileProps
+// }
 
-const initialState: Profile = {
- profile:{}
+const initialState: ProfileProps = {
+
+  name:"",
+  lastName:"",
+  email:"",
+  country:"",
+  verify:false
+ 
 };
 
 export const profileSlice = createSlice({
@@ -13,7 +20,7 @@ export const profileSlice = createSlice({
   initialState,
   reducers: {
     SetProfile: (state, action) => {
-        state.profile = action.payload.profile;
+        state = action.payload.profile;
     
      
       

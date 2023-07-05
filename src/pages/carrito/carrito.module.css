@@ -1,24 +1,25 @@
 .contain {
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    background-image: url("../../assets/fonodo3.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("../../assets/fonodo3.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
 }
 
 .CardContain {
-    padding-top: 10%;
-    
+  padding-top: 5%;
+  overflow-y: scroll;
 }
 
 .card {
-    margin-inline: 20%;
-    margin-bottom: 2%;
-    color: white;
-    display: flex;
-    border: solid black 3px;
+  margin-inline: 20%;
+  margin-bottom: 2%;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  border: solid black 3px;
 }
 .info {
     width: 70%;
@@ -37,24 +38,49 @@
 }
 
 .price {
-    width: 30%;
+    width: 40%;
+    border-right: solid black 3px;
+    display: flex;
+    flex-direction: column;
 }
+.price .sub{
+font-size: 10px;}
 
 .total {
-    display: flex;
-    border: solid black 3px;
-    margin-inline: 20%;
-    color: white;
+  display: flex;
+  border: solid black 3px;
+  margin-inline: 20%;
+  color: white;
 }
 
 .vacio {
-    border: solid black 3px;
-    width: 70.5%;
-    border-top: none;
-    border-bottom: none;
+  border: solid black 3px;
+  width: 70.5%;
+  border-top: none;
+  border-bottom: none;
 }
 .priceT {
-    text-decoration: underline;
-    text-align: center;
-    padding-left: 10%;
+  text-decoration: underline;
+  text-align: center;
+  padding-left: 10%;
+}
+
+.productContain {
+  display: flex;
+  width: 100%;
+}
+
+.butonCancell{
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    background-color: #f1d518;
+    color: black;
+    padding: 0.5%;
+    
+}
+.butonCancell:hover{
+    /* font-weight: bold; */
+    color: red;
+    cursor: pointer;
 }

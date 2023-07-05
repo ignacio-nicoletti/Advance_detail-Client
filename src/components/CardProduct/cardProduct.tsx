@@ -56,7 +56,16 @@ export const CardProduct: FC<Product> = ({
             <button className={style.masInfo} onClick={handlerClick}>
               ver mas
             </button>
-            <Counter id={id} amount={amount} price={price}/>
+            <Counter
+              id={id}
+              amount={amount}
+              price={price}
+              title={title}
+              brand={brand}
+              description={description}
+              material={material}
+              dimensions={dimensions}
+            />
           </div>
         ) : front === false ? (
           <div className={style.back}>
@@ -72,10 +81,16 @@ export const CardProduct: FC<Product> = ({
               ver Menos
             </button>
 
-            <Counter 
-            id={id}
-            amount={amount}
-            price={price}/>
+            <Counter
+              id={id}
+              amount={amount}
+              price={price}
+              title={title}
+              brand={brand}
+              description={description}
+              material={material}
+              dimensions={dimensions}
+            />
           </div>
         ) : (
           ""

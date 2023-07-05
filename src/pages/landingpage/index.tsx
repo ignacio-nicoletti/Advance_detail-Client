@@ -14,6 +14,7 @@ import { CardMember } from "@/components/CardMember/cardMember";
 import { Footer } from "@/components/Footer/footer";
 import "./landingPage.module.css";
 import Link from "next/link";
+import { FooterLanding } from "./FooterLanding/footerLanding";
 
 
 
@@ -133,7 +134,7 @@ export default function LandingPage() {
 
       <CardMember />
 
-      <Footer />
+      <FooterLanding />
     </div>
   );
 }

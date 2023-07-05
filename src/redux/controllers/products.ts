@@ -1,5 +1,9 @@
 import axios from "axios";
-import { SetProduct, SetProductStore } from "../slices/productSlice";
+import {
+  SetProduct,
+  SetProductStore,
+  SetUpdateProductStore,
+} from "../slices/productSlice";
 import { AppDispatch } from "../store/store";
 
 export const getProduct = (token: any) => async (dispatch: AppDispatch) => {
@@ -17,10 +21,43 @@ export const getProduct = (token: any) => async (dispatch: AppDispatch) => {
 };
 
 export const ProductStore =
-  (id: string, count: number,price:number) => async (dispatch: AppDispatch) => {
+  (
+    id: string,
+    count: number,
+    price: number,
+    title: string,
+    brand: string,
+    description: string,
+    material: string,
+    dimensions: string
+  ) =>
+  async (dispatch: AppDispatch) => {
     try {
-      dispatch(SetProductStore({ productsStore: { id: id, count: count ,price} }));
+      dispatch(
+        SetProductStore({
+          productsStore: {
+            id: id,
+            count: count,
+            price,
+            title: title,
+            brand: brand,
+            description: description,
+            material: material,
+            dimensions,
+          },
+        })
+      );
     } catch (error) {
       console.log(error);
     }
   };
+
+export const updateStoreWhenRemove = (UpdateStore:object[]) => async (dispatch: AppDispatch) => {
+  try {
+    console.log(UpdateStore);
+    
+    dispatch(SetUpdateProductStore(UpdateStore));
+  } catch (error) {
+    console.log(error);
+  }
+};

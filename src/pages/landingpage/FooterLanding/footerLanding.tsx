@@ -1,15 +1,15 @@
 import { FC } from "react";
-import style from "./footer.module.css";
-import instagramIcon from "../../assets/instagram.png";
-import whatsapp from "../../assets/whatsapp.png";
+import style from "./footerLanding.module.css";
+import instagramIcon from "../../../assets/instagram.png";
+import whatsapp from "../../../assets/whatsapp.png";
 import Image from "next/image";
-import gyeon from "../../assets/Footer/gyeon.png";
-import glanzen from "../../assets/Footer/glanzen.png";
-import advance from "../../assets/Footer/advanceLogo.png"
+import gyeon from "../../../assets/Footer/gyeon.png";
+import glanzen from "../../../assets/Footer/glanzen.png";
+import advance from "../../../assets/Footer/advanceLogo.png"
 
-export const Footer: FC = () => {
+export const FooterLanding: FC = () => {
   return (
-    <div className={style.contain}> 
+    <>
       <div className={style.contain_C}>
         <div className={style.slider}>
           <div className={style.slide_track}>
@@ -163,6 +163,6 @@ export const Footer: FC = () => {
           </a>
         </div>
       </div>
-    </div>
+    </>
   );
 };

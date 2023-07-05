@@ -7,17 +7,41 @@ import styles from "./counter.module.css";
 interface counter {
   id: string;
   amount: number;
-  price:number;
+  price: number;
+  title: string;
+  brand: string;
+  description: string;
+  material: string;
+  dimensions: string;
 }
 
-export const Counter: FC<counter> = ({ id, amount,price }: counter) => {
+export const Counter: FC<counter> = ({
+  id,
+  amount,
+  price,
+  title,
+  brand,
+  description,
+  material,
+  dimensions,
+}: counter) => {
   const [count, setCount] = useState(0);
- 
 
   const dispatch = useDispatch<AppDispatch>();
 
   const handlerStore = () => {
-    dispatch(ProductStore(id, count,price));
+    dispatch(
+      ProductStore(
+        id,
+        count,
+        price,
+        title,
+        brand,
+        description,
+        material,
+        dimensions
+      )
+    );
   };
 
   const increment = () => {
@@ -53,7 +77,11 @@ export const Counter: FC<counter> = ({ id, amount,price }: counter) => {
             +
           </button>
         </div>
-        <button className={styles.sum} onClick={handlerStore}>
+        <button
+          className={styles.sum}
+          onClick={handlerStore}
+          disabled={count === 0}
+        >
           Agregar al carrito
         </button>
       </div>

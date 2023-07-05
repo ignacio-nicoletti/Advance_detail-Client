@@ -33,6 +33,7 @@ import acrilico23 from "../../assets/trabajos/acrilico2.jpg";
 import acrilico24 from "../../assets/trabajos/acrilico2.jpg";
 import acrilico25 from "../../assets/trabajos/acrilico2.jpg";
 import { CardPasos } from "@/components/CarPasos/CarPasos";
+import { FooterLanding } from "../landingpage/FooterLanding/footerLanding";
 
 export default function trabajos() {
   const imagesImp: any = [ceramico, acrilico];
@@ -203,7 +204,7 @@ export default function trabajos() {
           <Carousel imagesImp={imagesImp} imagesGallery={imagesGallery} />
         </div>
       </div>
-      <Footer />
+      <FooterLanding />
     </div>
   );
 }
