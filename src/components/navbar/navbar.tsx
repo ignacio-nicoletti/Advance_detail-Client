@@ -5,13 +5,13 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { RootState } from "@/redux/store/store";
 import { clearSession } from "@/redux/controllers/Auth";
-import {deleteCookie } from "cookies-next";
-
-
+import { deleteCookie } from "cookies-next";
+import Image from "next/image";
+import logoadvance from "../../assets/landing/logoAdvance.png";
 
 export const Navbar: FC = () => {
   const router = useRouter();
-  const route =router.route
+  const route = router.route;
 
   const auth = useSelector((state: RootState) => state.Auth);
 
@@ -24,7 +24,7 @@ export const Navbar: FC = () => {
     if (typeof window !== "undefined") {
       clearSession();
       localStorage.clear(); //limpio storage
-      deleteCookie("cookieToken");//limpio cookie
+      deleteCookie("cookieToken"); //limpio cookie
     }
     router.push("/landingpage");
     setTimeout(() => router.reload(), 1000);
@@ -49,6 +49,19 @@ export const Navbar: FC = () => {
   return (
     <>
       <div className={style.navbar}>
+        <div className={style.logo}>
+          <Image
+            src={logoadvance}
+            alt="Logo advance_detailer"
+            style={{
+              borderRadius: "10px",
+              margin: "5%",
+              width: "40%",
+              height: "60%",
+            }}
+          />
+        </div>
+
         <ul className="nav justify-content-end">
           {OptionsNav.map((e: any) => (
             <li className="nav-item">

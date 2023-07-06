@@ -78,8 +78,8 @@
 }
 .checkbox:checked + label,
 .checkbox:not(:checked) + label {
-  /* position: relative; */
-  display: block;
+  position: relative;
+  display: flex;
   text-align: center;
   width: 60px;
   height: 16px;
@@ -88,10 +88,11 @@
   margin: 0px 20px auto 20px;
   cursor: pointer;
   background-color: #ffeba7;
+  align-items: center;
+  margin-bottom: 3%;
 }
 .checkbox:checked + label:before,
 .checkbox:not(:checked) + label:before {
-  /* position: absolute; */
   display: block;
   width: 36px;
   height: 36px;
@@ -107,7 +108,8 @@
   text-align: center;
   font-size: 24px;
   transition: all 0.5s ease;
+  transform: translateX(0px) rotate(-270deg) translateY(20px);
 }
 .checkbox:checked + label:before {
-  transform: translateX(44px) rotate(-270deg);
+  transform: translateX(40px) rotate(-270deg);
 }

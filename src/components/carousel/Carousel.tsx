@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import style from "./Carousel.module.css";
 import { FC } from "react";
-import galeria from '../../assets/galeriaA.png'
+import galeria from "../../assets/galeriaA.png";
 
 interface CarouselProps {
   imagesImp: [];
@@ -14,11 +14,16 @@ export const Carousel: FC<CarouselProps> = ({
   imagesGallery,
 }: CarouselProps) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   const [state, setState] = useState(false);
+
+  const [activeViewImage, setActiveViewImage] = useState(false);
 
   const handlerClick = () => {
     setState(!state);
+
+    setTimeout(() => {
+      setActiveViewImage(!activeViewImage);
+    }, 2000);
   };
 
   const nextImage = () => {
@@ -64,27 +69,31 @@ export const Carousel: FC<CarouselProps> = ({
           {state === true
             ? imagesGallery.map((e) => (
                 <div className={style.photo} key={e}>
-                  <Image
-                    src={e}
-                    alt="carousel current slide"
-                    width={100}
-                    height={100}
-                    style={{ borderRadius: "5px" }}
-                  />
+                  {activeViewImage === true ? (
+                    <Image
+                      src={e}
+                      alt="carousel current slide"
+                      width={100}
+                      height={100}
+                      style={{ borderRadius: "5px" }}
+                    />
+                  ) : (
+                    ""
+                  )}
                 </div>
               ))
             : ""}
         </div>
         <div className={style.containFlecha}>
           <div className={style.flecha}>
-          <Image
-                    src={galeria}
-                    alt="carousel current slide"
-                    width={25}
-                    height={25}
-                    style={{ borderRadius: "5px" }}
-                    onClick={handlerClick}
-                  />
+            <Image
+              src={galeria}
+              alt="carousel current slide"
+              width={25}
+              height={25}
+              style={{ borderRadius: "5px" }}
+              onClick={handlerClick}
+            />
           </div>
         </div>
       </div>

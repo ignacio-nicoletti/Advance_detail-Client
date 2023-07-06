@@ -47,6 +47,7 @@ export default function Login() {
             id="reg-log"
             name="reg-log"
             onClick={handlerActive}
+            hidden={true}
           />
           <label htmlFor="reg-log"></label>
 

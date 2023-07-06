@@ -16,15 +16,13 @@ import "./landingPage.module.css";
 import Link from "next/link";
 import { FooterLanding } from "./FooterLanding/footerLanding";
 
-
-
 export default function LandingPage() {
   return (
     <div className={style.landing}>
       <Navbar />
-      <h1>
-        ¡¡TU VEHICULO <br /> DEJALO COMO NUEVO!!
-      </h1>
+      <h1>DEJALO COMO NUEVO!!</h1>
+
+      <p>Somos Advance Detailer, nos dedicamos a renovar tu vehiculo.</p>
       {/* seccion tratamientos */}
       <div className={style.services}>
         <h3>Tratamientos</h3>
@@ -73,6 +71,7 @@ export default function LandingPage() {
             suciedad hasta manchas dentro del habitaculo.
           </p>
         </div>
+
         <Link href="/trabajos">
           <button>Ver mas servicios </button>
         </Link>
@@ -81,12 +80,11 @@ export default function LandingPage() {
       {/* seccion quienes somos */}
 
       <div className={style.about}>
-     
         <h2 id="about">¿Quienes somos?</h2>
         <div className={style.box1}>
           <p>
-            Nuestro equipo está compuesto por especialistas en diferentes
-            áreas del detailing automotor, como lavado y encerado, limpieza de
+            Nuestro equipo está compuesto por especialistas en diferentes áreas
+            del detailing automotor, como lavado y encerado, limpieza de
             interiores, pulido y abrillantado de carrocería, tapicería, entre
             otros, contando con las últimas técnicas y tendencias del mercado
             asegurando éxito general del proceso al detalle.

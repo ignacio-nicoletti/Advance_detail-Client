@@ -26,7 +26,7 @@ interface ProductStoreProps {
 export default function Carrito() {
   const dispatch = useDispatch<AppDispatch>();
   const [total, setTotal] = useState(0);
-  const [render,setRender]=useState(true)
+  const [render, setRender] = useState(true);
   // RENDER INFO
   let productsStore: ProductStoreProps[] = useSelector(
     (state: RootState) => state.product.productsStore
@@ -45,15 +45,14 @@ export default function Carrito() {
     let UpdateStore = productsStore.filter((e) => e.id != id);
 
     dispatch(updateStoreWhenRemove(UpdateStore));
-    setRender(!render)
+    setRender(!render);
   };
-
 
   return (
     <div className={style.contain}>
       <Navbar />
       <div className={style.CardContain}>
-        {productsStore?.map((product) => (
+        {productsStore.map((product) => (
           <div className={style.card}>
             <div className={style.info}>
               <p>{product?.title}</p>
@@ -79,14 +78,24 @@ export default function Carrito() {
           </div>
         ))}
 
-        <div className={style.total}>
-          <div className={style.vacio}>{}</div>
-          <div className={style.priceT}>
-            <p>Total</p>
-            <p>$ARG {total}</p>
+        {total === 0 ? (
+          <div className={style.noItems}>
+            <p>Aun no hay ningun elemento en el carrito</p>
           </div>
-        </div>
+        ) : (
+          <div className={style.total}>
+            <div className={style.vacio}>{}</div>
+            <div className={style.priceT}>
+              <p>Total</p>
+              <p>$ARG {total}</p>
+            </div>
+            <div className={style.butonPagar}>
+              <p>pagar</p>
+            </div>
+          </div>
+        )}
       </div>
+
       <Footer />
     </div>
   );
