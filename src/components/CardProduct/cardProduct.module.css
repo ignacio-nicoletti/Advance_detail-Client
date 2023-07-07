@@ -2,26 +2,29 @@
 
 .card_container {
   font-family: "Contrail One";
-  border-radius: 10px;
   height: 100%;
-  background-color: #f1d518;
-  border: solid black 3px;
+  background-color: #000000;
+  border: solid #000000 3px;
   border-radius: 5px;
   align-items: center;
   margin-inline: 5%; 
+  border-radius: 10px;
 }
+/* #f1d518 */
 
 .front,
 .back {
+  border-radius: 10px;
   font-family: "Contrail One";
   color: rgb(255, 255, 255);
+  background-color: #3e3d3d;
 }
 
 .front p,
 .back p {
   padding-left: 5%;
   font-size: 16px;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 
 .title {
@@ -37,8 +40,8 @@
 
 .masInfo {
   text-align: center;
-  background-color: black;
+  background-color: #f1d518;;
   height: 100%;
-  color: white;
+  color: rgb(0, 0, 0);
   width: 100%;
 }

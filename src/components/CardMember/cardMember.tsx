@@ -11,7 +11,7 @@ export const CardMember: FC = () => {
         <div className={style.card}>
           <h6 className={style.cardTitle}>Jonathan Di Santo</h6>
           <div className={style.img}>
-            <Image src={prueba} width={300} height={300} alt="" />
+            <Image src={prueba} height={300} alt="" style={{ width: "100%" }} />
           </div>
           <p className={style.cardDesc}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quae
@@ -25,7 +25,7 @@ export const CardMember: FC = () => {
         <div className={style.card}>
           <h6 className={style.cardTitle}>Ignacio nicoletti</h6>
           <div className={style.img}>
-            <Image src={prueba} width={300} height={300} alt="" />
+            <Image src={prueba} height={300} alt="" style={{ width: "100%" }} />
           </div>
           <p className={style.cardDesc}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quae
@@ -39,7 +39,7 @@ export const CardMember: FC = () => {
         <div className={style.card}>
           <h6 className={style.cardTitle}>Jonathan Di Santo</h6>
           <div className={style.img}>
-            <Image src={prueba} width={300} height={300} alt="" />
+            <Image src={prueba} height={300} alt="" style={{ width: "100%" }} />
           </div>
           <p className={style.cardDesc}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos quae

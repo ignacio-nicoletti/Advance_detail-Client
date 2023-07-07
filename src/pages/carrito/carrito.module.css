@@ -9,8 +9,7 @@
 }
 
 .CardContain {
-  padding-top: 5%;
-  /* overflow-y: scroll; */
+  padding-top: 10%;
 }
 
 .card {
@@ -64,38 +63,32 @@
 
 
 
+
 .total {
   display: flex;
   margin-inline: 20%;
-  /* flex-direction: row; */
   border: solid black 3px;
   color: white;
-  /* justify-content: space-between; */
   border: solid rgb(0, 255, 166) 3px;
 }
-.butonPagar  {
-  /* height: 10%; */
-  /* background-color: aliceblue;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-  border: solid rgb(246, 255, 0) 3px;
-}
-
 
 .vacio {
   width: 65%;
   border-top: none;
   border-bottom: none;
   border: solid rgb(243, 14, 14) 3px;
-  /* border: solid black 3px; */
 }
 .priceT {
   text-decoration: underline;
   text-align: center;
   border: solid rgb(255, 255, 255) 3px;
-  /* padding-inline: 5%; */
-  /* border-right: solid black 3px; */
+  margin-left: 65%;
+  width: 15%;
+
+}
+.butonPagar  {
+  width: 18.5%;
+  border: solid rgb(246, 255, 0) 3px;
 }
 
 .productContain {

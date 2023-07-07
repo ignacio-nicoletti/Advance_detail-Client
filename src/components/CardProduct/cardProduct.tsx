@@ -39,9 +39,7 @@ export const CardProduct: FC<Product> = ({
             <Image
               src={prueba}
               alt="photo product"
-              width={177}
-              height={140}
-              style={{}}
+              style={{ width: "100%", height: "50%", borderRadius: "10px" }}
             />
             <div className={style.description}>
               <h5 className={style.title}>{title}</h5>
@@ -49,7 +47,7 @@ export const CardProduct: FC<Product> = ({
               <p>
                 <b>Marca: </b> {brand || "-"}
               </p>
-              <p>Stock:{amount}</p>
+              <p>Stock: {amount || "-"}</p>
               <p>${price}</p>
             </div>
 
@@ -69,7 +67,11 @@ export const CardProduct: FC<Product> = ({
           </div>
         ) : front === false ? (
           <div className={style.back}>
-            <Image src={prueba} alt="photo product" width={177} height={140} />
+            <Image
+              src={prueba}
+              alt="photo product"
+              style={{ width: "100%", height: "50%", borderRadius: "10px" }}
+            />
             <div className={style.description}>
               <p>{description}</p>
               <p>Medidas: {dimensions || "-"}</p>

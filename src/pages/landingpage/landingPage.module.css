@@ -3,121 +3,141 @@
 .landing {
   margin: 0;
   padding: 0;
-  background-image: url("../../assets/landing/img.png");
-  backdrop-filter: blur(50px);
+  /* background-image: url("../../assets/landing/fondoNewold1.jpg"); */
+  /* background-image: url("../../assets/landing/img.png"); */
   background-size: 100%;
   background-repeat: no-repeat;
+  background-color: #000000;
 }
 
-.landing h1 {
-  color: #ffffff;
+.titleContain {
+  background-image: url("../../assets/landing/BG-Title.jpg");
+  background-size: cover;
+  box-shadow: rgb(241, 213, 24) 0px 1px 15px 2px;
+  height: 95vh;
+  margin-bottom: 5%;
+}
+
+.logo {
   padding-top: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+.titleContain h1 {
+  color: #f1d518;
+  padding-top: 3%;
   padding-bottom: 2%;
   text-align: center;
   font-family: "Contrail One";
 }
 
-.landing p {
+.titleContain p {
   color: #ffffff;
-  /* padding-top: 10%; */
   padding-bottom: 10%;
   text-align: center;
   font-family: "Contrail One";
 }
-/* servicios ofrecidos */
 
-.services {
-  /* background-color: aqua; */
+/* servicios */
+
+.servicesContain {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 15%;
 }
-.services h3 {
+.servicesContain h2 {
   text-align: center;
   color: #f1d518;
-  padding-bottom: 5%;
-  text-decoration: underline;
   font-family: "Contrail One";
+  padding: 2%;
+  margin-top: 2%;
 }
 
 .serviceBox {
-  display: flex;
+  margin-top: 5%;
   color: #ffffff;
-  justify-content: center;
+  border: solid #f1d518 3px;
+  width: 65%;
+  transition: 1s;
+}
+
+.informacion {
+  border-top: solid #f1d518 3px;
+  display: flex;
 }
 
 .serviceBox p {
-  width: 50%;
-  height: 150px;
   font-size: 16px;
-  padding-top: 3%;
-  padding-inline: 2%;
-  margin-left: 10%;
-  border-radius: 10px;
   font-family: "Roboto";
-  transition: 2s;
-  background-color: rgb(0, 0, 0);
+  padding: 2%;
+  transition: 1s;
+}
+.serviceBox h2 {
+  transition: 1s;
+  padding: 1%;
 }
 
-.serviceBox p:hover {
-  transition: 2s;
+.serviceBox:hover > h2 {
+  color: white;
+}
+.serviceBox:hover > .informacion > p {
+  color: #f1d518;
 }
 
-.services button {
-  /* width: 100%; */
-  border-radius: 10px;
-  margin-top: 5%;
-  padding: 5px;
-  background-color: #f1d518;
-  border: solid #f1d518 3px;
-  font-family: Contrail One;
+.buttonService {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  height: 20vh;
+  transition: 1s;
+  align-items: center;
 }
-
-.services button:hover {
+.servicesContain button {
   color: #f1d518;
   background-color: #000000;
-  border: solid #000 3px;
+  border: solid #f1d518 3px;
+  border-radius: 10px;
+  padding: 1%;
+  transition: 1s;
+}
+.servicesContain button:hover {
+  color: black;
+  background-color: #f1d518;
+  transition: 1s;
 }
 
 /* sobre nosotros */
 .about {
-  color: #f1d518;
-}
-
-.box1 {
   display: flex;
-  justify-content: space-around;
-  padding: 5%;
-  font-family: Contrail One;
-}
-
-.box2 {
-  display: flex;
-  justify-content: space-around;
-  padding: 5%;
-  font-family: Contrail One;
-}
-.box3 {
-  display: flex;
-  justify-content: space-around;
-  padding: 5%;
-  font-family: Contrail One;
-}
-
-.img {
-  display: flex;
-}
-
-.about p {
-  width: 50%;
+  flex-direction: column;
+  text-align: justify;
+  color: #ffffff;
+  margin-inline: 15%;
   font-size: 16px;
-  text-align: left;
-  font-family: Contrail One;
+  font-family: "Roboto";
+  /* border-bottom: solid #f1d518 1px; */
+}
+.about:hover {
+  box-shadow: rgb(241, 213, 24) 0px 10px 10px -10px;
 }
 
 .about h2 {
-  padding-top: 15%;
-  margin-left: 10%;
-  text-decoration: underline;
+  color: rgb(241, 213, 24);
+  text-align: center;
+  font-family: arial black;
+}
+
+.textAbout {
+  background-color: #f1d418de;
+  border-radius: 10px;
+  display: flex;
+  color: #000000;
+}
+.textAbout p {
+  width: 50%;
+  padding:3% 3% 1% 3%;
+  text-align: justify;
 }

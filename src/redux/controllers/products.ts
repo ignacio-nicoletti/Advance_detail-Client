@@ -6,12 +6,9 @@ import {
 } from "../slices/productSlice";
 import { AppDispatch } from "../store/store";
 
-export const getProduct = (token: any) => async (dispatch: AppDispatch) => {
+export const getProduct = () => async (dispatch: AppDispatch) => {
   try {
-    const resp = await axios.get("http://localhost:3000/product", {
-      headers: { "user-token": token },
-    });
-
+    const resp = await axios.get("http://localhost:3000/product");
     dispatch(
       SetProduct({ products: resp.data.products, status: resp.data.status })
     );
@@ -52,12 +49,13 @@ export const ProductStore =
     }
   };
 
-export const updateStoreWhenRemove = (UpdateStore:object[]) => async (dispatch: AppDispatch) => {
-  try {
-    console.log(UpdateStore);
-    
-    dispatch(SetUpdateProductStore(UpdateStore));
-  } catch (error) {
-    console.log(error);
-  }
-};
+export const updateStoreWhenRemove =
+  (UpdateStore: object[]) => async (dispatch: AppDispatch) => {
+    try {
+      console.log(UpdateStore);
+
+      dispatch(SetUpdateProductStore(UpdateStore));
+    } catch (error) {
+      console.log(error);
+    }
+  };

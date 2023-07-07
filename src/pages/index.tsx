@@ -3,17 +3,13 @@ import { AppDispatch, RootState } from "@/redux/store/store";
 import { useEffect } from "react";
 import { Navbar } from "../components/navbar/navbar";
 import style from "../styles/Home.module.css";
-import Image from "next/image";
-import prueba from "../assets/home/fondo2.jpeg";
-import { Counter } from "@/components/Counter/counter";
 import { CardProduct } from "@/components/CardProduct/cardProduct";
 import { getProduct } from "@/redux/controllers/products";
-import { redirect } from "next/dist/server/api-utils";
 import { useRouter } from "next/router";
 
 export default function Home() {
   let info = useSelector((state: RootState) => state.product.products);
-  let info2 = useSelector((state: RootState) => state.product);
+
   let token: String | null = "";
   if (typeof window !== "undefined") {
     token = localStorage.getItem("token");
@@ -21,15 +17,9 @@ export default function Home() {
 
   const dispatch = useDispatch<AppDispatch>();
 
-  const router = useRouter();
-
   useEffect(() => {
-    dispatch(getProduct(token));
+    dispatch(getProduct());
   }, []);
-
-  // if (info2.status === 401) {
-  //   router.push("/landingpage");
-  // }
 
   return (
     <div className={style.home}>

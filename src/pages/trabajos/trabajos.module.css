@@ -1,102 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Contrail+One&display=swap");
 
 .contain {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  /* background-image: url("../../assets/trabajos/fondoTj.png"); */
-  /* background-repeat: no-repeat; */
-  background-size: contain;
+  background-image: url("../../assets/trabajos/fondo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Contrail One";
 }
 
 /* tratamientos */
-.tratamientos {
-  padding: 10%;
-}
-
-.tratamientos h3 {
+.photoContain {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 10%;
+  padding-block: 10%;
+  /* text-align: center; */
   color: #f1d518;
-  padding-top: 5%;
-}
-.tratamientos h2 {
-  color: #f1d518;
-  text-align: center;
-  text-decoration: underline;
 }
 
-.tratamientos p {
-  color: #ffff;
+.photo {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(4, auto);
+  gap: 5%;
 }
-/* .tratamientoBox {
-} */
-
-/* pasos a seguir */
-
-.boxPasos {
-  padding: 1rem;
-  margin: 2%;
-  border: solid black 3px;
-  font-size: 10px;
-}
-
-.boxPasos:hover{
-
-  height: 200px;
-}
-
-
-
-
-
-
-
-
-
-/* lavados */
-
-.lav {
-  padding: 10%;
-}
-
-.lav h2 {
-  color: #f1d518;
-  padding-top: 5%;
-  text-decoration: underline;
-}
-
-.lavBox p {
-  color: #ffff;
-}
-/* interiores */
-.interiores {
-  padding: 10%;
-}
-
-.interiores h2 {
-  color: #f1d518;
-  padding-top: 5%;
-  text-decoration: underline;
-}
-
-.int p {
-  color: #ffff;
-}
-/* motores */
-.motores {
-  padding: 10%;
-}
-
-.motores h2 {
-  color: #f1d518;
-  padding-top: 5%;
-  text-decoration: underline;
-}
-
-.motor p {
-  color: #ffff;
-}
-
-/* -------------------------------------------------------------------------- */
-

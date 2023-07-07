@@ -7,9 +7,8 @@
 .card {
   background-color: rgb(60, 60, 60);
   background: linear-gradient(to top, #f1d518 -50%, rgba(255, 255, 255, 0) 60%);
-
   padding: 2%;
-  border: solid black 3px;
+  border: solid rgb(255, 255, 255) 3px;
   border-radius: 5px;
 }
 .card h6 {

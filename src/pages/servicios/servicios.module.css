@@ -1,0 +1,20 @@
+.serviciosContain p{
+}
+.grillaService {
+  font-size: 1.5rem;
+  border: solid 3px black;
+  padding-top: 10%;
+}
+
+.lavados {
+  border: solid black 3px;
+  margin: 1%;
+}
+.tratamientos {
+  margin: 1%;
+  border: solid black 3px;
+}
+.otrosService {
+  margin: 1%;
+  border: solid black 3px;
+}

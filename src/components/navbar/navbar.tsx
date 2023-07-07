@@ -34,15 +34,18 @@ export const Navbar: FC = () => {
   if (auth.autorized === true) {
     OptionsNav = [
       { option: "Inicio", path: "/landingpage" },
+      { option: "Tratamientos", path: "/tratamientos" },
       { option: "Trabajos", path: "/trabajos" },
       { option: "Sobre Nosotros", path: "/landingpage#about" },
-      { option: "Tienda", path: "/" },
     ];
   } else {
     OptionsNav = [
       { option: "Inicio", path: "/landingpage" },
+      { option: "Tratamientos", path: "/tratamientos" },
+      { option: "Servicios", path: "/servicios" },
       { option: "Trabajos", path: "/trabajos" },
       { option: "Sobre Nosotros", path: "/landingpage#about" },
+      { option: "Tienda", path: "/" },
     ];
   }
 
@@ -58,6 +61,7 @@ export const Navbar: FC = () => {
               margin: "5%",
               width: "40%",
               height: "60%",
+              // marginLeft:"5%"
             }}
           />
         </div>
@@ -99,6 +103,11 @@ export const Navbar: FC = () => {
                       <li>
                         <Link href="/carrito" className={style.link}>
                           Carrito
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/carrito" className={style.link}>
+                          Compras
                         </Link>
                       </li>
                       <li>

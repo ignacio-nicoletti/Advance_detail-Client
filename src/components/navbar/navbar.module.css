@@ -1,36 +1,35 @@
-.navbar{
-background-color:#000000cc;
-backdrop-filter: blur(10px);
-box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-width: 100%;
-position: fixed;
-z-index: 2;
-font-family: Contrail One;
-display: flex;
-justify-content:space-between ;
-align-items: center;
-border-bottom:solid #f1d41880 1px;
+@import url("https://fonts.googleapis.com/css2?family=Contrail+One&display=swap");
+
+.navbar {
+  background-color: #000000cc;
+  backdrop-filter: blur(10px);
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  font-family: Contrail One;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid #f1d41880 1px;
 }
 
-.link{
-text-decoration: none;
-color: #ffffff;
-padding-inline: 10px;
+.link {
+  text-decoration: none;
+  color: #ffffff;
+  padding-inline: 10px;
 }
 
-.link:hover{
-    color:#f1d518
+.link:hover {
+  color: rgb(241, 213, 24);
 }
 
-.active{
-position: absolute;
-background-color: #c99400;
-padding: 1%;
-right: 0.5%;
-
+.active {
+  position: absolute;
+  background-color: #c99400;
+  padding: 1%;
+  right: 0.5%;
 }
-.icon{
-    padding-right: 10%;
+.icon {
+  padding-right: 10%;
 }
-
-

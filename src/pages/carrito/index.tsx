@@ -84,7 +84,7 @@ export default function Carrito() {
           </div>
         ) : (
           <div className={style.total}>
-            <div className={style.vacio}>{}</div>
+            {/* <div className={style.vacio}>{}</div> */}
             <div className={style.priceT}>
               <p>Total</p>
               <p>$ARG {total}</p>
