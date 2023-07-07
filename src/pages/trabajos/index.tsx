@@ -34,6 +34,8 @@ import acrilico24 from "../../assets/trabajos/acrilico2.jpg";
 import acrilico25 from "../../assets/trabajos/acrilico2.jpg";
 import { CardPasos } from "@/components/CarPasos/CarPasos";
 import { FooterLanding } from "../landingpage/FooterLanding/footerLanding";
+import { Counter } from "@/components/Counter/counter";
+import CounterGallery from "@/components/counterGallery/counterGallery";
 
 export default function trabajos() {
   const imagesImp: any = [ceramico, acrilico];
@@ -64,14 +66,13 @@ export default function trabajos() {
   return (
     <div className={style.contain}>
       <Navbar />
-     
-            {/* <Carousel imagesImp={imagesImp} imagesGallery={imagesGallery} /> */}
-       
+
+      {/* <Carousel imagesImp={imagesImp} imagesGallery={imagesGallery} /> */}
 
       <div className={style.photoContain}>
         <p>Tratramientos</p>
-        {imagesGallery.map((e: any) => (
-          <div className={style.photo}>
+        <div className={style.photo}>
+          {imagesGallery.map((e: any) => (
             <Image
               src={e}
               alt="carousel current slide"
@@ -79,9 +80,26 @@ export default function trabajos() {
               height={100}
               style={{ borderRadius: "5px" }}
             />
-          </div>
-        ))}
-        <p>1/20 </p>
+          ))}
+
+          <CounterGallery />
+        </div>
+      </div>
+      <div className={style.photoContain}>
+        <p>Lavados</p>
+        <div className={style.photo}>
+          {imagesGallery.map((e: any) => (
+            <Image
+              src={e}
+              alt="carousel current slide"
+              width={100}
+              height={100}
+              style={{ borderRadius: "5px" }}
+            />
+          ))}
+
+          <CounterGallery />
+        </div>
       </div>
 
       <FooterLanding />

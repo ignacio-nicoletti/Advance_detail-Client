@@ -107,15 +107,15 @@ export default function LandingPage() {
         </div>
         <div className={style.buttonService}>
           <Link href="/trabajos">
-            <button>Ver mas servicios </button>
+            <button id="about">Ver mas servicios </button>
           </Link>
         </div>
-      </div>
+      </div >
 
       {/* seccion quienes somos */}
 
-      <div className={style.about}>
-        <h2 id="about">¿Quienes somos?</h2>
+      <div  className={style.about}>
+        <h2 >¿Quienes somos?</h2>
         <div className={style.textAbout}>
           <p>
             Nuestro equipo está compuesto por especialistas en diferentes áreas
