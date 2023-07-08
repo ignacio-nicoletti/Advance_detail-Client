@@ -9,17 +9,14 @@
 
 /* tratamientos */
 .photoContain {
-  /* display: flex; */
-  /* flex-direction: column; */
   margin-inline: 10%;
-  padding-block: 10%;
-  /* text-align: center; */
+  padding-block: 2.5%;
   color: #f1d518;
 }
 
 .photo {
   display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-template-rows: repeat(4, auto);
-  gap: 5%;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1%;
 }

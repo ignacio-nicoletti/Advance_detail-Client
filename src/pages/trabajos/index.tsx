@@ -69,16 +69,14 @@ export default function trabajos() {
 
       {/* <Carousel imagesImp={imagesImp} imagesGallery={imagesGallery} /> */}
 
-      <div className={style.photoContain}>
+      <div className={style.photoContain} style={{paddingTop:"10%"}} >
         <p>Tratramientos</p>
         <div className={style.photo}>
           {imagesGallery.map((e: any) => (
             <Image
               src={e}
               alt="carousel current slide"
-              width={100}
-              height={100}
-              style={{ borderRadius: "5px" }}
+              style={{ borderRadius: "5px", width: "100%", height: "80%" }}
             />
           ))}
 
@@ -92,9 +90,21 @@ export default function trabajos() {
             <Image
               src={e}
               alt="carousel current slide"
-              width={100}
-              height={100}
-              style={{ borderRadius: "5px" }}
+              style={{ borderRadius: "5px", width: "100%", height: "80%" }}
+            />
+          ))}
+
+          <CounterGallery />
+        </div>
+      </div>
+      <div className={style.photoContain}>
+        <p>Interiores</p>
+        <div className={style.photo}>
+          {imagesGallery.map((e: any) => (
+            <Image
+              src={e}
+              alt="carousel current slide"
+              style={{ borderRadius: "5px", width: "100%", height: "80%" }}
             />
           ))}
 

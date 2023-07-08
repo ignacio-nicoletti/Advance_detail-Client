@@ -39,7 +39,12 @@ export const CardProduct: FC<Product> = ({
             <Image
               src={prueba}
               alt="photo product"
-              style={{ width: "100%", height: "50%", borderRadius: "10px" }}
+              style={{
+                width: "100%",
+                height: "50%",
+                borderTopLeftRadius: "10px",
+                borderTopRightRadius: "10px",
+              }}
             />
             <div className={style.description}>
               <h5 className={style.title}>{title}</h5>
@@ -70,7 +75,12 @@ export const CardProduct: FC<Product> = ({
             <Image
               src={prueba}
               alt="photo product"
-              style={{ width: "100%", height: "50%", borderRadius: "10px" }}
+              style={{
+                width: "100%",
+                height: "50%",
+                borderTopLeftRadius: "10px",
+                borderTopRightRadius: "10px",
+              }}
             />
             <div className={style.description}>
               <p>{description}</p>

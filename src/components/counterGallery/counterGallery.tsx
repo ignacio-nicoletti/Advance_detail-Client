@@ -1,7 +1,5 @@
+import styles from "./countergallery.module.css";
+
 export default function CounterGallery() {
-  return (
-    <div>
-      <p>1/20</p>
-    </div>
-  );
+  return <div></div>;
 }
